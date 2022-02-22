@@ -1,4 +1,4 @@
-versioning bertujuan untuk mengatur versi source code program
+Versioning bertujuan untuk mengatur versi source code program
 Git adalah salah satu version control  system polpuler yang digunakan para developer untuk mengembangkan software secara bersama sama
 github  merupakan salah satu hosting service
 
