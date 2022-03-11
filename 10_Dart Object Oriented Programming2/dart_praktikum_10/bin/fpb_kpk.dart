@@ -4,39 +4,34 @@ abstract class Matematika {
   }
 }
 
-class Fpb extends Matematika {
+class Kpk implements Matematika {
   @override
-  int fpb(int x, int y){
-int r = 0;
-
-    while(y!=0){
-        r = x % y;
-        x = y;
-        x = r;
+  int hasil() {
+    int result = 0;
+    int x = 7;
+    int y = 21;
+    for (int i = 1; i <= y; i++) {
+      result = (result + x);
+      if (result % y == 0) {
+        return result;
+      }
     }
-
-    return x;
-}
+    return result;
   }
-
-
-int FPB(int x, int y){
-    int r = 0;
-    while(y!=0){
-        r = x % y;
-        x = y;
-        y = r;
-    }
-
-    return x;
 }
 
-int main(){
-int x=120;
-int y=88;
-int KPK=0;
-
-    KPK= (x*y / FPB(x, y)) as int;
-    print("%" KPK);
-    return 0;
+class Fpb implements Matematika {
+  @override
+  int hasil() {
+    int result = 0;
+    int x = 8;
+    int y = 24;
+    for (int i = 1; i <= x; i++) {
+      result = (result = x);
+      if (x % i == 0 && y % i == 0) {
+        return result;
+      }
+    }
+    return result;
+  }
 }
