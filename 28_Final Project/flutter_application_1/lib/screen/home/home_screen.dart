@@ -57,6 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
       padding: const EdgeInsets.all(8),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           Text('Hi Commers!'),
           SizedBox(

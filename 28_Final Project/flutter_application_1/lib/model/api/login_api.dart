@@ -14,18 +14,18 @@ class LoginAPI {
     return logins;
   }
 
-  // Future<Login> postLogin(Login login) async {
-  //   Response response;
-  //   var dataLogin = {
-  //     'id': login.username,
-  //     'name': login.email,
-  //     'phone': login.password
-  //   };
-  //   Dio dio = Dio();
-  //   var dataMap = jsonEncode(dataLogin);
-  //   response = await dio.post(
-  //       'https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/logins',
-  //       data: dataMap);
-  //   return Login.fromJson(response.data);
+  // Future<Login> postContact(Login login) async{
+  //    Response response;
+  //     var dio = Dio();
+  //     var dataLogin = {
+  //       'id': login.username,
+  //       'name': login.email,
+  //       'phone': login.password
+  //     };
+  //     var dataMap = jsonEncode(dataLogin);
+  //     response = await dio.post(
+  //         'https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/contacts/',
+  //         data: dataMap);
+  //     return Login.fromJson(response.data);
   // }
 }
