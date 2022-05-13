@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screen/login/login_view_model.dart';
+import 'package:flutter_application_1/screen/login/login_state_model.dart';
 import 'package:flutter_application_1/screen/splash/splash_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -8,7 +8,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => LoginViewModel(),
+          create: (_) => LoginStateModel(),
         )
       ],
       child: const MyApp(),
@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
       title: 'IKom Berita 2.0',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        brightness: Brightness.light,
+        primaryColor: Colors.blue.shade900,
       ),
       home: const SplashScreen(),
     );

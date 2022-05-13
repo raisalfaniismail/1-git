@@ -1,4 +1,4 @@
-// import 'package:email_validator/email_validator.dart' show EmailValidator;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screen/home/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       body: ListView(
         children: [
-          buildCirleAvatar(context),
+          buildLogo(context),
           const SizedBox(
             height: 20,
           ),
@@ -66,30 +66,27 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget buildCirleAvatar(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Colors.grey),
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    CircleAvatar(child: Icon(Icons.account_circle_rounded))
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
+  Widget buildLogo(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      padding: const EdgeInsets.all(8),
+      color: Colors.lightBlue.shade900,
+      child: Column(
+        children: <Widget>[
+          Container(
+            width: 100,
+            height: 100,
+            decoration: const BoxDecoration(
+                color: Colors.black, shape: BoxShape.circle),
+            child: Center(
+              child: Image.asset('assets/images/logo.jpg'),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Text('Hi Commers, Silahkan Masuk'),
+        ],
       ),
     );
   }

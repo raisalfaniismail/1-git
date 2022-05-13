@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screen/login/login_view_model.dart';
-import 'package:flutter_application_1/screen/login/screen_login.dart';
+import 'package:flutter_application_1/screen/login/login_state_model.dart';
+import 'package:flutter_application_1/screen/login/login_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -40,7 +40,7 @@ class _ProfileState extends State<Profile> {
           const SizedBox(
             height: 10,
           ),
-          buildLoginViewModel(context),
+          // buildLoginViewModel(context),
           const SizedBox(
             height: 20,
           ),
@@ -91,25 +91,25 @@ class _ProfileState extends State<Profile> {
     );
   }
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
-      Provider.of<LoginViewModel>(context, listen: false).getAllLogins();
-    });
-  }
+  // @override
+  // void didChangeDependencies() {
+  //   super.didChangeDependencies();
+  //   WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
+  //     Provider.of<LoginStateModel>(context, listen: false).getAllLogins();
+  //   });
+  // }
 
-  Widget buildLoginViewModel(BuildContext context) {
-    final modelView = Provider.of<LoginViewModel>(context);
-    return ListView.builder(
-      itemCount: modelView.logins.length,
-      itemBuilder: (context, index) {
-        final login = modelView.logins[index];
-        return ListTile(
-          title: Text(login.username),
-          subtitle: Text(login.email),
-        );
-      },
-    );
-  }
+  // Widget buildLoginViewModel(BuildContext context) {
+  //   final stateView = Provider.of<LoginStateModel>(context);
+  //   return ListView.builder(
+  //     itemCount: stateView.logins.length,
+  //     itemBuilder: (context, index) {
+  //       final login = stateView.logins[index];
+  //       return ListTile(
+  //         title: Text(login.username),
+  //         subtitle: Text(login.email),
+  //       );
+  //     },
+  //   );
+  // }
 }

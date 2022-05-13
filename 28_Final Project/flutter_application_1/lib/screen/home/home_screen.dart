@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screen/penting/panting_screen.dart';
-import 'package:flutter_application_1/screen/profile/profile_screen.dart';
+import 'package:flutter_application_1/screen/home/preview_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../penting/panting_screen.dart';
+import '../profile/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -31,22 +33,20 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: <Widget>[
-          ElevatedButton.icon(
-            onPressed: () {},
-            icon: (const Icon(Icons.update_rounded)),
-            label: const Text('Update'),
-          ),
-        ],
+        leading: (IconButton(
+          onPressed: () {},
+          icon: (const Icon(Icons.add)),
+        )),
         title: const Text('IKom Berita 2.0'),
       ),
       body: ListView(
         children: [
           buildUsername(context),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
-          buildBottomNavigasiBar(context),
+          buildBerita(context),
+          buildNavigatorBar(context),
         ],
       ),
     );
@@ -60,12 +60,30 @@ class _HomeScreenState extends State<HomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           Text('Hi Commers!'),
-          SizedBox(
-            height: 8,
-          ),
-          Text('username'),
         ],
       ),
+    );
+  }
+
+  Widget buildBerita(BuildContext context) {
+    return ListView.builder(
+      itemCount: 5,
+      itemBuilder: (context, index) {
+        return ListTile(
+          leading: Container(
+            color: Colors.grey.shade200,
+            height: 100,
+            width: 100,
+            child: const Text('image'),
+          ),
+          title: const Text('title'),
+          subtitle: const Text('subtitel'),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const PreviewScreen()));
+          },
+        );
+      },
     );
   }
 
@@ -81,8 +99,8 @@ class _HomeScreenState extends State<HomeScreen> {
       _selectedIndex = index;
     });
   }
-
-  Widget buildBottomNavigasiBar(BuildContext context) {
+  
+  Widget buildNavigatorBar(BuildContext context) {
     return Row(
       children: [
         Center(

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screen/login/screen_login.dart';
+import 'package:flutter_application_1/screen/login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -24,21 +24,30 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const <Widget>[
-            Icon(
-              Icons.newspaper_rounded,
-              size: 100,
-              color: Colors.white,
+          children: <Widget>[
+            Image.asset(
+              'assets/image/logo.jpg',
+              height: 100,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "IKom Berita 2.0",
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            const Text(
+              'Terhimpun Mudah Dibaca',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15,
               ),
             ),
           ],
